@@ -1,8 +1,9 @@
 {
-  "name": "uhst",
+  "name": "uhst-client-node",
   "version": "0.0.0-development",
   "description": "User Hosted Secure Transmission client",
   "jsnext:main": "index.js",
+  "main": "index.cjs.js",
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -12,7 +13,7 @@
     "test:coverage": "nyc npm run test && rm -rf ./coverage",
     "test:watch": "mocha -w --require ts-node/register 'test/**/*.spec.ts'",
     "lint": "tslint -c tslint.json lib/**/*.ts test/**/*.ts",
-    "dist": "npm test && npm run build && copyfiles package.json README.md ./example/*.html dist && typedoc",
+    "dist": "npm test && npm run build && copyfiles package.json README.md dist && typedoc",
     "semantic-release": "semantic-release",
     "server": "uhst"
   },
@@ -47,7 +48,6 @@
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "rollup": "^2.35.1",
-    "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.3.0",
     "sinon": "^9.2.2",
     "sinon-chai": "^3.5.0",
