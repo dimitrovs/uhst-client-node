@@ -24,7 +24,7 @@ export class RelaySocket implements UhstSocket {
                 this.token = params.token;
                 this.sendUrl = params.sendUrl;
                 // give consumer a chance to subscribe to open event
-                setTimeout(() => {
+                setImmediate(() => {
                     this._ee.emit("open");
                 });
                 break;
@@ -46,7 +46,6 @@ export class RelaySocket implements UhstSocket {
     }
     
     send(message: string): Promise<any>;
-    send(message: Blob): Promise<any>;
     send(message: ArrayBuffer): Promise<any>;
     send(message: ArrayBufferView): Promise<any>;
     async send(message: any): Promise<any> {

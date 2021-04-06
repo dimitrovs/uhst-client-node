@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 import { NetworkError, NetworkUnreachable } from './UhstErrors';
 
 const REQUEST_OPTIONS = {

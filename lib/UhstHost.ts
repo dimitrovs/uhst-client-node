@@ -29,7 +29,6 @@ export class UhstHost {
     }
 
     broadcast(message: string): void;
-    broadcast(message: Blob): void;
     broadcast(message: ArrayBuffer): void;
     broadcast(message: ArrayBufferView): void;
     broadcast(message: any) {

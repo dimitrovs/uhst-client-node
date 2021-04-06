@@ -1,3 +1,5 @@
+import fetch, { Response } from 'node-fetch';
+import EventSource from 'eventsource';
 import {
   UhstRelayClient,
   MessageHandler,
