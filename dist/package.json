@@ -1,0 +1,73 @@
+{
+  "name": "uhst-client-node",
+  "version": "0.0.0-development",
+  "description": "User Hosted Secure Transmission client",
+  "jsnext:main": "index.js",
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/index.js",
+    "clean": "rm -rf dist",
+    "test": "npm run clean && mocha --require ts-node/register 'test/**/*.spec.ts'",
+    "test:coverage": "nyc npm run test && rm -rf ./coverage",
+    "test:watch": "mocha -w --require ts-node/register 'test/**/*.spec.ts'",
+    "lint": "tslint -c tslint.json lib/**/*.ts test/**/*.ts",
+    "dist": "npm test && npm run build && copyfiles package.json README.md dist && typedoc",
+    "semantic-release": "semantic-release",
+    "server": "uhst"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uhst/uhst-client-js.git"
+  },
+  "keywords": [
+    "webrtc",
+    "p2p",
+    "distributed"
+  ],
+  "author": "Stefan Dimitrov <stefan@dimitrov.li>",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uhst/uhst-client-js/issues"
+  },
+  "homepage": "https://github.com/uhst/uhst-client-js#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@types/chai": "^4.2.14",
+    "@types/eventsource": "^1.1.5",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node-fetch": "^2.5.9",
+    "@types/sinon": "^9.0.10",
+    "@types/sinon-chai": "^3.2.5",
+    "chai": "^4.1.2",
+    "copyfiles": "^2.4.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "rollup": "^2.35.1",
+    "semantic-release": "^17.3.0",
+    "sinon": "^9.2.2",
+    "sinon-chai": "^3.5.0",
+    "ts-node": "^6.0.5",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.1.3",
+    "uhst-server": "^2.1.1"
+  },
+  "dependencies": {
+    "eventsource": "^1.1.0",
+    "inf-ee": "^1.0.4",
+    "jwt-decode": "^3.1.2",
+    "node-fetch": "^2.6.1"
+  },
+  "release": {
+    "pkgRoot": "dist",
+    "assets": [
+      "dist/*.zip",
+      "dist/*.tar.gz"
+    ]
+  }
+}

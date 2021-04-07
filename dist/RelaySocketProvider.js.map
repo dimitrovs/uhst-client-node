@@ -1,0 +1,1 @@
+{"version":3,"file":"RelaySocketProvider.js","sourceRoot":"","sources":["../lib/RelaySocketProvider.ts"],"names":[],"mappings":"AAIA,OAAO,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AAE5C;IAAA;IAIA,CAAC;IAHG,8CAAgB,GAAhB,UAAiB,WAA4B,EAAE,MAA6C,EAAE,KAAc;QACxG,OAAO,IAAI,WAAW,CAAC,WAAW,EAAE,MAAM,EAAE,KAAK,CAAC,CAAC;IACvD,CAAC;IACL,0BAAC;AAAD,CAAC,AAJD,IAIC"}
